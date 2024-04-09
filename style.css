@@ -6,14 +6,21 @@ body {
 
 #main-header {
   background-color: white;
-  color: #a70184;
   padding: 5px 0; /* top&down left&right */
   margin: 20px 5% 20px 5%; /* top right down left */
+}
+
+#main-header h1 span {
+  color: #a70184;
 }
 
 .games-container img  {
   height: 180px;
   width: 120px;
+}
+
+#main-header span:nth-child(2) {
+  text-decoration: underline;
 }
 
 #brands li {
@@ -23,4 +30,185 @@ body {
   list-style-position: inside; /* moves the bullet point inside the element */
   margin-right: 40px; /* same as native left separation for bullet point */
 }
+
+#brands ul > li:nth-child(even) {
+  background-color: #a70184;
+}
+
+#access-buttons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+#access-buttons button:hover {
+  background-color: #c0c6cb;
+}
+
+#access-buttons button:active {
+  background-color: #a70184;
+  color: antiquewhite;
+}
+
+#brands li::first-letter {
+  font-size: 22px;
+}
+
+#brands li::marker {
+  color: blue;
+  content: "👾 ";
+  /* font-size: 30px; */
+}
+
+#brands li:hover::after {
+  content: " - Oferta";
+}
+
+/* ejemplo de modificar texto con css. */
+/* #brands li:hover span {
+  visibility: hidden;
+}
+
+#brands li:hover::after {
+  content: "Oferta";
+} */
+
+#access-buttons {
+  background-color: gray;
+  height: 120px;
+
+  display: flex; /* inicializa el uso de flexbox en este contenedor */
+  flex-direction: row; /* de izquierda a derecha, valor predefinido */
+  justify-content: space-evenly; /* ajuste eje principal */
+  align-items: center; /* ajuste eje segundario */
+
+  padding-left: 10%; /* % del tamaño del padre */
+  padding-right: 10%;
+
+  position: sticky;
+  top: 0
+
+}
+
+.games-container .card {
+  background-color: #fecdf2;
+  border-radius: 15px;
+
+  width: 200px;
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: space-evenly;
+  /* align-items y justify content se invierten si la direccion es columnas */
+
+  transition: flex-grow 0.5s;
+  /* las transiciones de tipo flex-grow durarán 0.5 segundos */
+
+}
+
+.games-container {
+  padding-left: 10%;
+  padding-right: 10%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px/* separacion general vertical/horizontal de todos los elementos internos*/
+
+}
+
+.games-container .card:hover {
+  flex-grow: 1;
+}
+
+#main-header {
+  position: relative;
+}
+
+#position-absolute {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+
+#responsive-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+html {
+  font-size: 16px; /* valor predeterminado */
+}
+
+h1 {
+  font-size: 2.7rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+
+
+
+/* asumimos que todo lo que hemos hecho es para movil y para otros dispositivos */
+
+/* SOLO TAMAÑO DE TABLET */
+/* @media (min-width: 1030px) { */
+  @media (width > 560px) {
+  
+    body {
+      background-color: rgb(69, 46, 90);
+    }
+
+    #access-buttons button {
+      width: 80px;
+      height: 80px;
+    }
+
+    html {
+      font-size: 20px;
+    }
+  
+  }
+
+/* SOLO TAMAÑO DE DESKTOP */
+/* @media (min-width: 1030px) { */
+@media (width > 1030px) {
+  
+  body {
+    background-color: rgb(46, 90, 75);
+  }
+
+  .games-container {
+    gap: 80px
+  }
+
+  #access-buttons {
+    justify-content: center;
+    gap: 50px
+  }
+
+  #responsive-container {
+    flex-direction: row;
+  }
+
+  html {
+    font-size: 12px;
+  }
+
+}
+
 
